@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <vector>
 
 bool isInt(std::string inp){
     for (size_t i = 0; i < inp.length(); i++){
@@ -8,6 +9,22 @@ bool isInt(std::string inp){
         }
     }
     return true;
+}
+int Sum(const std::vector<int>& vec){
+    int sum = 0;
+    for (size_t i = 0; i < vec.size()-1; i+=2){
+        if (vec[i]>10){
+            sum+=10;
+            continue;
+        }
+        sum+=vec[i];
+    }
+    for (size_t i = 0; i < vec.size()-1; i+=2){
+        if (sum+10<=21 && vec[i]==1){
+            sum+=10;
+        }
+    }
+    return sum;
 }
 void ATM(int& balance){
     std::cout<<"\nYou are at the ATM"<<std::endl;

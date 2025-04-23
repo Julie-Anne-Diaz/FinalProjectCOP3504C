@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "functions.hpp"
+#include "BlackJack.hpp"
 
 int main(){
     std::cout<<"Welcome to the COP3504C casino!"<<std::endl;
@@ -19,6 +20,9 @@ int main(){
     while (inp!="0"){
         if (inp=="1"){
             ATM(balance);
+        }
+        else if (inp=="2"){
+            Black_Jack(balance, profit);
         }
         std::cout<<"\nCasino Menu\n-----------\n0. Leave\n1. Visit the ATM\n2. Play blackjack\nWhat would you like do to?"<<std::endl;
 
