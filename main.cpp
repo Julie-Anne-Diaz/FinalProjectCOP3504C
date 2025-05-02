@@ -16,7 +16,7 @@ int main(){
     std::cout<<"Enter how much money to start with"<<std::endl;
     std::cin>>inp;
     //input check
-    while (!isInt(inp) || inp>std::numeric_limits<int>::max() || std::stoi(inp)<0 ){
+    while (!isInt(inp) || std::stoi(inp)<0 ){
         std::cout<<"invalid input"<<std::endl;
         std::cin>>inp;
     }
