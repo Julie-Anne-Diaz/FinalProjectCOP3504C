@@ -3,15 +3,20 @@
 #include "functions.hpp"
 #include "BlackJack.hpp"
 #include "SlotMachine.hpp"
+#include <limits>
 
 int main(){
-    std::cout<<"Welcome to the COP3504C casino!"<<std::endl;
-    std::cout<<"Enter how much money to start with"<<std::endl;
+
     int balance;
     int profit=0;
     std::string inp;
+
+    //get starting money
+    std::cout<<"Welcome to the COP3504C casino!"<<std::endl;
+    std::cout<<"Enter how much money to start with"<<std::endl;
     std::cin>>inp;
-    while (!isInt(inp)){
+    //input check
+    while (!isInt(inp) || inp>std::numeric_limits<int>::max() || std::stoi(inp)<0 ){
         std::cout<<"invalid input"<<std::endl;
         std::cin>>inp;
     }
