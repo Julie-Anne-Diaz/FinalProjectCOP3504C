@@ -2,6 +2,7 @@
 #include <string>
 #include "functions.hpp"
 #include "BlackJack.hpp"
+#include "SlotMachine.hpp"
 
 int main(){
     std::cout<<"Welcome to the COP3504C casino!"<<std::endl;
@@ -15,7 +16,7 @@ int main(){
         std::cin>>inp;
     }
     balance=std::stoi(inp);
-    std::cout<<"\nCasino Menu\n-----------\n0. Leave\n1. Visit the ATM\n2. Play blackjack\nWhat would you like do to?"<<std::endl;
+    std::cout<<"\nCasino Menu\n-----------\n0. Leave\n1. Visit the ATM\n2. Play blackjack\n3. Play slots\nWhat would you like do to?"<<std::endl;
     std::cin>>inp;
     while (inp!="0"){
         if (inp=="1"){
@@ -24,7 +25,10 @@ int main(){
         else if (inp=="2"){
             Black_Jack(balance, profit);
         }
-        std::cout<<"\nCasino Menu\n-----------\n0. Leave\n1. Visit the ATM\n2. Play blackjack\nWhat would you like do to?"<<std::endl;
+        else if (inp=="3"){
+            Slot_Machine(balance, profit);
+        }
+        std::cout<<"\nCasino Menu\n-----------\n0. Leave\n1. Visit the ATM\n2. Play blackjack\n3. Play slots\n What would you like do to?"<<std::endl;
 
         std::cin>>inp;
 
